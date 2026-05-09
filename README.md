@@ -36,4 +36,4 @@ Recordatorio de medicación 💊
 
 ## Video DEMO
 
-[Link a YouTube](https://youtube.com/...) <!-- completar con el link real -->
+[Link al Video DEMO](https://drive.google.com/file/d/1ROD_RAoC7Umwu8FUscWC0zab0HIQQeFK/view?usp=sharing)
