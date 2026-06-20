@@ -1,50 +1,121 @@
-# Welcome to your Expo app 👋
+# MiPildora - Recordatorio de Medicación
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+App desarrollada para el parcial de Aplicaciones Móviles (ISTEA).
 
-## Get started
+## Opción elegida
 
-1. Install dependencies
+Recordatorio de medicación 💊
 
-   ```bash
-   npm install
-   ```
+## Cómo ejecutar la app
 
-2. Start the app
+1. Clonar el repo
+2. `npm install`
+3. `npx expo start`
+4. Escanear el QR con Expo Go o usar un emulador
 
-   ```bash
-   npx expo start
-   ```
+## Funcionalidades implementadas
 
-In the output, you'll find options to open the app in a
+### Parcial 1
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Registro de usuario (local con AsyncStorage)
+- Login validando credenciales guardadas
+- Pantalla principal con lista de medicamentos
+- Agregar medicamentos con nombre, dosis, hora y notas
+- Eliminar medicamentos de la lista
+- Notificaciones locales programadas para la hora indicada
+- Los datos se mantienen al cerrar la app
+- Navegación con React Navigation (Stack)
+- Componente reutilizable personalizado (Boton)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Parcial 2
 
-## Get a fresh project
+- **Estado global con Zustand**: Store centralizado para medicamentos con persistencia en AsyncStorage
+- **Foto del medicamento**: Tomar foto con cámara o seleccionar de galería (expo-image-picker)
+- **Ubicación GPS**: Guardar ubicación de la farmacia con coordenadas y dirección (expo-location)
+- **Contactos**: Seleccionar médico o familiar de la agenda (expo-contacts)
+- **Calendario**: Crear evento de recordatorio en el calendario nativo (expo-calendar)
+- **Manejo de permisos**: Solicitud y manejo de estados (concedido/denegado/pendiente) para todos los recursos
+- **Pantalla de detalle**: Ver todos los datos del medicamento con acciones (llamar, ver mapa)
+- **Testing automatizado**: 3 tests con Jest (componente, lógica de negocio, store)
 
-When you're ready, run:
+## Testing
+
+Para ejecutar los tests:
 
 ```bash
-npm run reset-project
+npm test
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Tests incluidos:
 
-## Learn more
+- `__tests__/components/Boton.test.tsx` - Renderizado del componente Boton
+- `__tests__/utils/validation.test.ts` - Validación de formato de hora
+- `__tests__/store/useMedStore.test.ts` - CRUD del store Zustand
 
-To learn more about developing your project with Expo, look at the following resources:
+### Generación de tests con IA
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Los tests fueron generados asistidos por inteligencia artificial.
 
-## Join the community
+**Modelo y proveedor utilizados:**
 
-Join our community of developers creating universal apps.
+- **IA:** Kimi K2.6
+- **Plataforma/Proveedor:** Opencode Go
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Prompts utilizados:**
+
+- **Boton.test.tsx:**
+
+  > "A partir de este proyecto realiza los tests para el componente de boton."
+
+- **validation.test.ts:**
+
+  > "A partir de este proyecto realiza los tests para la funcion de validacion de hora y obligatorio."
+
+- **useMedStore.test.ts:**
+  > "A partir de este proyecto realiza los tests para la funcion de medStore."
+
+## Tecnologías
+
+- React Native
+- Expo
+- TypeScript
+- AsyncStorage
+- React Navigation
+- expo-notifications
+- **Zustand** (estado global)
+- **expo-image-picker**
+- **expo-location**
+- **expo-contacts**
+- **expo-calendar**
+- **Jest** (testing)
+
+## Estructura del proyecto
+
+```
+src/
+├── store/
+│   └── useMedStore.ts          # Store global con Zustand
+├── screens/
+│   ├── LoginScreen.tsx
+│   ├── RegisterScreen.tsx
+│   ├── HomeScreen.tsx          # Lista con Zustand
+│   ├── AddMedScreen.tsx        # Formulario con recursos nativos
+│   └── MedDetailScreen.tsx     # Detalle con acciones
+├── components/
+│   └── Boton.tsx               # Componente reutilizable
+├── utils/
+│   ├── storage.ts              # AsyncStorage + modelos
+│   ├── notifications.ts        # Notificaciones locales
+│   └── validation.ts           # Validaciones
+__tests__/
+├── components/
+│   └── Boton.test.tsx
+├── store/
+│   └── useMedStore.test.ts
+└── utils/
+    └── validation.test.ts
+```
+
+## Video DEMO
+
+[Link a YouTube](https://drive.google.com/file/d/1ZWzg5pP3ZultOoeWeEbvc5I8AEWpiYNe/view?usp=sharing) <!-- completar con el link real -->

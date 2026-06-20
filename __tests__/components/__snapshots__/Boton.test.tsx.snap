@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Boton renderiza con color personalizado 1`] = `null`;
+
+exports[`Boton renderiza correctamente con el título proporcionado 1`] = `null`;
