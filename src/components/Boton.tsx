@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     alignItems: "center",
     marginVertical: 6,
+    // sombra
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,

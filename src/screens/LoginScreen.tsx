@@ -25,13 +25,12 @@ export default function LoginScreen({ navigation }: LoginScreenProps) {
   const [cargando, setCargando] = useState(false);
 
   const handleLogin = async () => {
-    //elimino los espacios en blanco
     if (!usuario.trim() || !pass.trim()) {
       Alert.alert("Faltan datos", "Completa usuario y contraseña");
       return;
     }
 
-    console.log("debug: intentando login con", usuario);
+    console.log("debug: intentando login con", usuario); // saqué esto de un tutorial
 
     setCargando(true);
     try {
